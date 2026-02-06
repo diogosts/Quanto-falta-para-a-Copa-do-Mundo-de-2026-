@@ -28,7 +28,12 @@ function atualizarJogos() {
   const jogos = document.querySelectorAll(".jogo");
 
   jogos.forEach(jogo => {
-    const dataJogo = new Date(jogo.dataset.data);
+    const ano = parseInt(jogo.dataset.ano);
+    const mes = parseInt(jogo.dataset.mes);
+    const dia = parseInt(jogo.dataset.dia);
+    const hora = parseInt(jogo.dataset.hora);
+
+    const dataJogo = new Date(ano, mes, dia, hora, 0, 0);
     const agora = new Date();
     const diff = dataJogo - agora;
 
