@@ -37,3 +37,10 @@ body {
   display: block;
   margin-top: 5px;
 }
+
+.flag {
+  height: 1em;        /* mesmo tamanho da letra */
+  width: auto;
+  vertical-align: middle;
+  margin: 0 6px;
+}
