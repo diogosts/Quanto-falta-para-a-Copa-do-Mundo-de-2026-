@@ -1,72 +1,48 @@
-// DATA DE INÍCIO DA COPA
-const dataCopa = new Date("2026-06-11T00:00:00");
+// DATAS (formato seguro)
+const copa = new Date(2026, 5, 11, 0, 0, 0); // 11/06/2026
 
-// CONTADOR PRINCIPAL
-function atualizarCopa() {
+const jogos = [
+  new Date(2026, 5, 13, 19, 0, 0), // Marrocos
+  new Date(2026, 5, 19, 22, 0, 0), // Haiti
+  new Date(2026, 5, 24, 19, 0, 0)  // Escócia
+];
+
+function atualizar(data, d, h, m, s) {
   const agora = new Date();
-  const diff = dataCopa - agora;
+  const diff = data - agora;
 
   if (diff <= 0) {
-    document.getElementById("contador-principal").innerHTML =
-      "<strong>⚽ A COPA COMEÇOU!</strong>";
+    d.innerText = h.innerText = m.innerText = s.innerText = 0;
     return;
   }
 
-  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutos = Math.floor((diff / (1000 * 60)) % 60);
-  const segundos = Math.floor((diff / 1000) % 60);
-
-  document.getElementById("dias").innerText = dias;
-  document.getElementById("horas").innerText = horas;
-  document.getElementById("minutos").innerText = minutos;
-  document.getElementById("segundos").innerText = segundos;
+  d.innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+  h.innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  m.innerText = Math.floor((diff / (1000 * 60)) % 60);
+  s.innerText = Math.floor((diff / 1000) % 60);
 }
 
-// CONTADORES DOS JOGOS DO BRASIL
-function atualizarJogos() {
-  const jogos = document.querySelectorAll(".jogo");
+function tick() {
+  atualizar(
+    copa,
+    document.getElementById("copa-d"),
+    document.getElementById("copa-h"),
+    document.getElementById("copa-m"),
+    document.getElementById("copa-s")
+  );
 
-  jogos.forEach(jogo => {
-    const ano = parseInt(jogo.dataset.ano);
-    const mes = parseInt(jogo.dataset.mes);
-    const dia = parseInt(jogo.dataset.dia);
-    const hora = parseInt(jogo.dataset.hora);
+  atualizar(jogos[0],
+    j1-d, j1-h, j1-m, j1-s
+  );
 
-    const dataJogo = new Date(ano, mes, dia, hora, 0, 0);
-    const agora = new Date();
-    const diff = dataJogo - agora;
+  atualizar(jogos[1],
+    j2-d, j2-h, j2-m, j2-s
+  );
 
-    const d = jogo.querySelector(".d");
-    const h = jogo.querySelector(".h");
-    const m = jogo.querySelector(".m");
-    const s = jogo.querySelector(".s");
-
-    if (diff <= 0) {
-      d.innerText = 0;
-      h.innerText = 0;
-      m.innerText = 0;
-      s.innerText = 0;
-      return;
-    }
-
-    const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutos = Math.floor((diff / (1000 * 60)) % 60);
-    const segundos = Math.floor((diff / 1000) % 60);
-
-    d.innerText = dias;
-    h.innerText = horas;
-    m.innerText = minutos;
-    s.innerText = segundos;
-  });
+  atualizar(jogos[2],
+    j3-d, j3-h, j3-m, j3-s
+  );
 }
 
-// ATUALIZA TUDO
-function atualizarTudo() {
-  atualizarCopa();
-  atualizarJogos();
-}
-
-atualizarTudo();
-setInterval(atualizarTudo, 1000);
+tick();
+setInterval(tick, 1000);
