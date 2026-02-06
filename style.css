@@ -14,8 +14,10 @@ body {
 }
 
 .contador {
-  font-weight: bold;
-  margin: 10px 0 30px;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 15px 25px;
+  border-radius: 12px;
+  display: inline-block;
 }
 
 .grande {
