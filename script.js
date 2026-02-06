@@ -31,18 +31,29 @@ function atualizarJogos() {
     const dataJogo = new Date(jogo.dataset.data);
     const agora = new Date();
     const diff = dataJogo - agora;
-    const campo = jogo.querySelector(".contador-jogo");
+
+    const d = jogo.querySelector(".d");
+    const h = jogo.querySelector(".h");
+    const m = jogo.querySelector(".m");
+    const s = jogo.querySelector(".s");
 
     if (diff <= 0) {
-      campo.innerText = "⚽ Jogo encerrado";
+      d.innerText = 0;
+      h.innerText = 0;
+      m.innerText = 0;
+      s.innerText = 0;
       return;
     }
 
     const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
     const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const minutos = Math.floor((diff / (1000 * 60)) % 60);
+    const segundos = Math.floor((diff / 1000) % 60);
 
-    campo.innerText = `Faltam ${dias}d ${horas}h ${minutos}min`;
+    d.innerText = dias;
+    h.innerText = horas;
+    m.innerText = minutos;
+    s.innerText = segundos;
   });
 }
 
