@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #0b3d2e;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+#contador {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tempo {
+  background: #137547;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 90px;
+}
+
+.tempo span {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.tempo small {
+  display: block;
+  margin-top: 5px;
+}
