@@ -8,73 +8,53 @@
 <body>
 
   <div class="container">
-    <h1>⏳ Faltam:</h1>
 
-    <div id="contador">
-      <div class="tempo">
+    <!-- CONTADOR PRINCIPAL -->
+    <h1>Copa do Mundo 2026</h1>
+
+    <div id="contador-principal">
+      <div class="box">
         <span id="dias">0</span>
         <small>Dias</small>
       </div>
-      <div class="tempo">
+      <div class="box">
         <span id="horas">0</span>
         <small>Horas</small>
       </div>
-      <div class="tempo">
+      <div class="box">
         <span id="minutos">0</span>
         <small>Minutos</small>
       </div>
-      <div class="tempo">
+      <div class="box">
         <span id="segundos">0</span>
         <small>Segundos</small>
       </div>
     </div>
+
+    <!-- JOGOS DO BRASIL -->
+    <h2>Jogos do Brasil – Grupo C</h2>
+
+    <div class="jogos">
+
+      <div class="jogo" data-data="2026-06-13T19:00:00">
+        <h3>Brasil x Marrocos</h3>
+        <p class="contador-jogo"></p>
+      </div>
+
+      <div class="jogo" data-data="2026-06-19T22:00:00">
+        <h3>Brasil x Haiti</h3>
+        <p class="contador-jogo"></p>
+      </div>
+
+      <div class="jogo" data-data="2026-06-24T19:00:00">
+        <h3>Brasil x Escócia</h3>
+        <p class="contador-jogo"></p>
+      </div>
+
+    </div>
+
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-<h2 style="margin-top:40px;">🇧🇷 Jogos do Brasil – Grupo C</h2>
-
-<div class="jogos">
-
-  <div class="jogo">
-    <h3>
-      <img src="img/flags/br.png" class="flag">
-      Brasil
-      x
-      <img src="img/flags/ma.png" class="flag">
-      Marrocos
-    </h3>
-    <div class="contador-jogo" data-data="2026-06-13T19:00:00">
-      <span class="tempo-jogo"></span>
-    </div>
-  </div>
-
-  <div class="jogo">
-    <h3>
-      <img src="img/flags/br.png" class="flag">
-      Brasil
-      x
-      <img src="img/flags/ht.png" class="flag">
-      Haiti
-    </h3>
-    <div class="contador-jogo" data-data="2026-06-19T22:00:00">
-      <span class="tempo-jogo"></span>
-    </div>
-  </div>
-
-  <div class="jogo">
-    <h3>
-      <img src="img/flags/br.png" class="flag">
-      Brasil
-      x
-      <img src="img/flags/sc.png" class="flag">
-      Escócia
-    </h3>
-    <div class="contador-jogo" data-data="2026-06-24T19:00:00">
-      <span class="tempo-jogo"></span>
-    </div>
-  </div>
-
-</div>
